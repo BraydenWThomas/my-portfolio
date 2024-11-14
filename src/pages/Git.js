@@ -5,8 +5,16 @@ function Git() {
 
     useEffect(() => {
         
-        //fetch("https://api.github.com/repos
-        
+        fetch("https://api.github.com/repos/BraydenWThomas/my-portfolio/branches")
+        .then((res) => res.json())
+        .then(
+            (result) => {
+                console.log(result);
+            },
+            (error) => {
+                console.log(error);
+            }
+        )   
     }, []);
 
 
