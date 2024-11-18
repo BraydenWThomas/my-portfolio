@@ -1,0 +1,25 @@
+.body, .image, .links, .overview{
+    float: left;
+}
+
+.body{
+    width: 550px;
+    height: 300px;
+    background-color: red;
+}
+
+.image{
+    width: 550px;
+    height: 300px;
+    background-color: green;
+}
+.links{
+    width: 550px;
+    height: 300px;
+    background-color: blue;
+}
+.overview{
+    width: 550px;
+    height: 300px;
+    background-color: orange;
+}
