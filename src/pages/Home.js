@@ -3,6 +3,7 @@ import { Container, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Box from '@mui/material/Box';
 import {Button} from '@mui/material';
+import {IconButton} from '@mui/material';
 
 // #1C1C22
 // #D8DBE2
@@ -19,15 +20,17 @@ const useStyles = makeStyles({
     justifyContent: 'space-between', 
     alignItems: 'flex-start', 
     gap: '16px', 
+    paddingTop: '15px',  
   },
   bodyContainer: {
-    backgroundColor: 'blue',
+    // backgroundColor: 'blue',
     padding: '16px',
     width: '560px !important',
+    paddingTop: '50px',
 
   },
   pictureContainer: {
-    backgroundColor: 'green',
+    // backgroundColor: 'green',
     padding: '16px',
     flex: '1 1 30%', 
     minWidth: '30%', 
@@ -41,12 +44,12 @@ const useStyles = makeStyles({
 
     width: '99%',
     height: '99%',
-    border: '6px dashed #58A4B0', // Dashed border
-    borderRadius: '50%', // Circular border
-    animation: '$rotate 60s linear infinite', // Rotation animation
-    transformOrigin: 'center', // Ensure smooth circular rotation
-    pointerEvents: 'none', // Prevent interaction with the border
-    boxSizing: 'border-box', // Prevent padding from affecting size
+    border: '6px dashed #58A4B0', 
+    borderRadius: '50%', 
+    animation: '$rotate 60s linear infinite',
+    transformOrigin: 'center', 
+    pointerEvents: 'none', 
+    boxSizing: 'border-box', 
   },
   picture: {
     width: '100%',
@@ -63,7 +66,7 @@ const useStyles = makeStyles({
     },
   },
   experienceBarContainer: {
-    backgroundColor: 'red',
+    // backgroundColor: 'red',
     display: 'flex',
     justifyContent: "space-between", 
     alignItems: 'center',  
@@ -72,7 +75,7 @@ const useStyles = makeStyles({
   },
  
   buttonBar:{
-    backgroundColor: '#1c1c22', 
+    // backgroundColor: '#1c1c22', 
     display: 'flex', 
     justifyContent: 'space-evenly', 
     alignItems: 'center', 
@@ -96,7 +99,7 @@ const useStyles = makeStyles({
   },
 
   experienceBarModule:{
-    backgroundColor: 'green',
+    // backgroundColor: 'green',
     display: 'flex',
     flexDirection: 'column', 
     alignItems: 'center', 
@@ -110,25 +113,28 @@ const useStyles = makeStyles({
 function Home() {
   const classes = useStyles();
 
+
   return (
     <div className={classes.containerWrapper}>
       {/* Body Container */}
       <Container className={classes.bodyContainer}>
         <Typography>Software Engineer</Typography>
-        <Typography variant="h2">Hello I'm</Typography>
+        <Typography variant="h2" paddingTop={"3px"}>Hello I'm</Typography>
         <Typography variant="h2" color='#58A4B0'>Brayden Thomas</Typography>
-        <Typography>
-          Small summary about me and my work. Small summary about me and my work. Small summary about me and my
-          work. Small summary about me and my work.
+        <Typography variant="subtitle1" paddingTop={"15px"} paddingBottom={"30px"}>
+        Electrical Engineering graduate with a focus on Computer Science. Skilled in solving complex problems and optimizing system performance through automation.
         </Typography>
         {/* Button Bar Container */}
         <Container className={classes.buttonBar}>
           <Button variant="outlined" className={classes.cvButton}>Download CV</Button>
           {/* Linked In */}
-          <Button variant="outlined">O</Button> 
+          <IconButton onClick={() => { /* Your onClick event here */ }}>
+            <img alt="LinkedIn" src={require('../assets/LinkedIn200.png')} style={{ width: '18px', height: '18px' }} />
+          </IconButton>
           {/* GitHub */}
-          <Button variant="outlined">O</Button>
-
+          <IconButton onClick={() => { /* Your onClick event here */ }}>
+            <img alt="GitHub" src={require('../assets/LinkedIn.png')} style={{ width: '18px', height: '18px'}} />
+          </IconButton>
 
         </Container>
       </Container>
