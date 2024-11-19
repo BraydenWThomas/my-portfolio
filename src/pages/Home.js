@@ -38,14 +38,15 @@ const useStyles = makeStyles({
   },
   rotatingBorder: {
     position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    border: '4px dashed #81B0C0', // Dashed border
+
+    width: '99%',
+    height: '99%',
+    border: '6px dashed #58A4B0', // Dashed border
     borderRadius: '50%', // Circular border
-    animation: '$rotate 4s linear infinite', // Rotation animation
-    pointerEvents: 'none', // Ensures the border does not interfere with interactions
+    animation: '$rotate 60s linear infinite', // Rotation animation
+    transformOrigin: 'center', // Ensure smooth circular rotation
+    pointerEvents: 'none', // Prevent interaction with the border
+    boxSizing: 'border-box', // Prevent padding from affecting size
   },
   picture: {
     width: '100%',
