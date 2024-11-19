@@ -15,6 +15,13 @@ const theme = createTheme({
     fontFamily: "JetBrains Mono",
     color: '#D8DBE2',
   }
+
+// #1C1C22
+// #D8DBE2
+// #A9BCD0
+// #58A4B0
+
+
 });
 
 function App() {
