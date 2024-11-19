@@ -31,6 +31,35 @@ const useStyles = makeStyles({
     padding: '16px',
     flex: '1 1 30%', 
     minWidth: '30%', 
+    position: 'relative',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  rotatingBorder: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    border: '4px dashed #81B0C0', // Dashed border
+    borderRadius: '50%', // Circular border
+    animation: '$rotate 4s linear infinite', // Rotation animation
+    pointerEvents: 'none', // Ensures the border does not interfere with interactions
+  },
+  picture: {
+    width: '100%',
+    height: '100%',
+    borderRadius: '50%', 
+    objectFit: 'cover', 
+  },
+  '@keyframes rotate': {
+    '0%': {
+      transform: 'rotate(0deg)',
+    },
+    '100%': {
+      transform: 'rotate(360deg)',
+    },
   },
   experienceBarContainer: {
     backgroundColor: 'red',
@@ -105,13 +134,16 @@ function Home() {
 
       {/* Picture Container */}
       <Container className={classes.pictureContainer}>
-      <Box
-        component="img"
-        src={require('../assets/temp_image.jpg')}
-        sx={{
-          width: '100%',
-          height: '100%',}}
-  />
+        {/* Rotating dashed border */}
+        <div className={classes.rotatingBorder}></div>
+
+        {/* Stationary image */}
+        <Box
+          component="img"
+          src={require('../assets/temp_image.png')} 
+          alt="Profile Picture"
+          className={classes.picture}
+        />
       </Container>
 
       {/* Experience Bar Container */}
