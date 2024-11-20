@@ -1,9 +1,8 @@
 import React from 'react';
-import { Container, Typography } from '@mui/material';
+import { Container, Typography, Button, IconButton } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Box from '@mui/material/Box';
-import {Button} from '@mui/material';
-import {IconButton} from '@mui/material';
+import DownloadIcon from '@mui/icons-material/FileDownload';
 
 // #1C1C22
 // #D8DBE2
@@ -70,7 +69,7 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: "space-between", 
     alignItems: 'center',  
-    padding: '16px',
+     paddingTop: '16px',
     width: '100%', 
   },
  
@@ -95,7 +94,7 @@ const useStyles = makeStyles({
   },
   
   cvButton: {
-    borderRadius: '50px !important', 
+    borderRadius: '50px !important' 
   },
 
   experienceBarModule:{
@@ -126,14 +125,23 @@ function Home() {
         </Typography>
         {/* Button Bar Container */}
         <Container className={classes.buttonBar}>
-          <Button variant="outlined" className={classes.cvButton}>Download CV</Button>
+          <Button variant="outlined" className={classes.cvButton}
+          endIcon={<DownloadIcon />}
+          onClick={() => {
+            const link = document.createElement('a');
+            link.href = require('../assets/BraydenThomasCV.pdf'); // File Path
+            link.download = 'BraydenThomasCV.pdf'; // File Name
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          }}>Download CV</Button>
           {/* Linked In */}
-          <IconButton onClick={() => { /* Your onClick event here */ }}>
+          <IconButton onClick={() => window.open("https://www.linkedin.com/in/brayden-w-thomas/", "_blank")}>
             <img alt="LinkedIn" src={require('../assets/LinkedIn200.png')} style={{ width: '18px', height: '18px' }} />
           </IconButton>
           {/* GitHub */}
-          <IconButton onClick={() => { /* Your onClick event here */ }}>
-            <img alt="GitHub" src={require('../assets/LinkedIn.png')} style={{ width: '18px', height: '18px'}} />
+          <IconButton onClick={() => window.open("https://github.com/BraydenWThomas", "_blank")}>
+            <img alt="GitHub" src={require('../assets/GitHub200.png')} style={{ width: '18px', height: '18px'}} />
           </IconButton>
 
         </Container>
@@ -161,12 +169,12 @@ function Home() {
         </Container>
 
         <Container className={classes.experienceBarModule}>
-          <Typography variant='h4'> 42 </Typography>
+          <Typography variant='h4'> 6 </Typography>
           <Typography variant='h7'> Projects Completed </Typography>
         </Container>
 
         <Container className={classes.experienceBarModule}>
-          <Typography variant='h4'> 155 </Typography>
+          <Typography variant='h4'> 3 </Typography>
           <Typography variant='h7'> Technologies Mastered </Typography>
         </Container>
 
