@@ -19,8 +19,14 @@ function About() {
   return (
     <div className={classes.containerWrapper}>
       <Container className={classes.bodyContainer}>
-      <Typography variant="h3">About Me</Typography>
-      <Typography variant="subtitle1">Information about my background, skills, and experience.</Typography>
+        <Typography variant="h3">Why hire me?</Typography>
+        <Typography variant="subtitle1">Details about me, some small summary maybe</Typography>
+
+        <Container className={classes.bodyButtonContainer}>
+
+
+        </Container>
+
       </Container>
 
       <Container className={classes.skilsContainer}>

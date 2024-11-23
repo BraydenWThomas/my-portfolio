@@ -30,6 +30,8 @@ function Contact() {
         <Typography variant="subtitle1">GitHub: github.com/BraydenWThomas</Typography>
       </Container>
 
+      {/* Automated email send */}
+
     </div>
   );
 }
