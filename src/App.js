@@ -11,6 +11,18 @@ import { createTheme, ThemeProvider } from '@mui/material';
 
 // Styles for Material UI components
 const theme = createTheme({
+  palette: {
+    primary: {
+       main: "#58A4B0", 
+    },
+    secondary: {
+       main: "#81B0C0",
+    },
+    background: {
+      default: "#A9BCD0", 
+    },
+  },
+
   typography: {
     fontFamily: "JetBrains Mono",
     color: '#D8DBE2',
