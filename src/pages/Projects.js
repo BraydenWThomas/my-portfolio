@@ -1,28 +1,24 @@
-import React from 'react';
-import { makeStyles } from '@mui/styles';
-import { Container, Typography} from '@mui/material';
+// src/pages/Projects.jsx
+import React from "react";
+import { projects } from "../data/projects";
+import ProjectCard from "../components/ProjectCard";
+import { Grid, Container, Typography } from "@mui/material";
 
-const useStyles = makeStyles({
-  containerWrapper: {
-    display: 'flex', 
-    flexWrap: 'wrap', 
-    justifyContent: 'space-between', 
-    alignItems: 'flex-start', 
-    gap: '16px', 
-    paddingTop: '15px',  
-  },
-})
-
-function Projects() {
-  const classes = useStyles();
+const Projects = () => {
   return (
-    <div className={classes.containerWrapper}>
-      <Container className={classes.bodyContainer}>
-      <Typography variant="h3">My Projects</Typography>
-      <Typography variant="subtitle1">A showcase of my previous projects</Typography>
-      </Container>
-    </div>
+    <Container sx={{ py: 4 }}>
+      <Typography variant="h4" component="h2" align="center" gutterBottom>
+        My Projects
+      </Typography>
+      <Grid container spacing={4}>
+        {projects.map((project) => (
+          <Grid item key={project.id} xs={12} sm={6} md={4}>
+            <ProjectCard project={project} />
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
   );
-}
+};
 
 export default Projects;

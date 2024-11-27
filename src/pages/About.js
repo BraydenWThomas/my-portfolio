@@ -69,8 +69,9 @@ function About() {
             }`}
             onClick={() => setVisibleContainer('skills')}
           >
-            Button 1
+            Key Skills
           </Button>
+
           <Button
             variant="outlined"
             className={`${classes.aboutButtons} ${
@@ -78,8 +79,9 @@ function About() {
             }`}
             onClick={() => setVisibleContainer('academic')}
           >
-            Button 2
+            Academic Highlights
           </Button>
+
           <Button
             variant="outlined"
             className={`${classes.aboutButtons} ${
@@ -87,7 +89,7 @@ function About() {
             }`}
             onClick={() => setVisibleContainer('profession')}
           >
-            Button 3
+            Professional Experience
           </Button>
         </div>
       </Container>
