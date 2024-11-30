@@ -137,11 +137,11 @@ function Home() {
           }}>Download CV</Button>
           {/* Linked In */}
           <IconButton onClick={() => window.open("https://www.linkedin.com/in/brayden-w-thomas/", "_blank")}>
-            <img alt="LinkedIn" src={require('../assets/LinkedIn200.png')} style={{ width: '18px', height: '18px' }} />
+            <img alt="LinkedIn" src={require('../assets/home/linkedinLogo.png')} style={{ width: '18px', height: '18px' }} />
           </IconButton>
           {/* GitHub */}
           <IconButton onClick={() => window.open("https://github.com/BraydenWThomas", "_blank")}>
-            <img alt="GitHub" src={require('../assets/GitHub200.png')} style={{ width: '18px', height: '18px'}} />
+            <img alt="GitHub" src={require('../assets/home/githubLogo.png')} style={{ width: '18px', height: '18px'}} />
           </IconButton>
 
         </Container>
@@ -155,7 +155,7 @@ function Home() {
         {/* Stationary image */}
         <Box
           component="img"
-          src={require('../assets/temp_image.png')} 
+          src={require('../assets/home/profilePicture.png')} 
           alt="Profile Picture"
           className={classes.picture}
         />
