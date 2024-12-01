@@ -12,9 +12,8 @@ const useStyles = makeStyles({
     paddingTop: "15px",
     flexWrap: "wrap", 
   },
-  contactContainer: {
-    width: "40%", 
-    padding: "16px",
+  contactContainer: { 
+    paddingTop: "16px",
     textAlign: "left",
     backgroundColor: "#1C1C22",
     color: "#D8DBE2",
@@ -23,25 +22,31 @@ const useStyles = makeStyles({
   },
   formContainer: {
     width: "50%", 
-    padding: "16px",
-    backgroundColor: "#1C1C22",
+    paddingTop: "20px",
+    padding: "32px",
+    backgroundColor: "#28272C", 
     color: "#D8DBE2",
     boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
-    borderRadius: "8px",
+    borderRadius: "16px",
     marginTop: "16px",
     minWidth: "320px",
   },
   contactItem: {
     display: "flex",
     alignItems: "center",
-    marginBottom: "16px",
+    marginBottom: "32px",
   },
   icon: {
     color: "#58A4B0",
     marginRight: "16px",
+    padding: "8px",
+    background: "#28272C",
+    fontSize: "32px!important"
   },
   formField: {
-    marginBottom: "16px!important",
+    backgroundColor: "#1C1C22",
+    marginTop: "12px!important",
+    marginBottom: "12px!important",
     "& .MuiInputBase-root": {
       color: "#D8DBE2",
     },
@@ -56,6 +61,7 @@ const useStyles = makeStyles({
     },
   },
   submitButton: {
+    marginTop: "8px!important",
     backgroundColor: "#58A4B0",
     color: "#FFF",
     "&:hover": {
@@ -105,7 +111,7 @@ function Contact() {
     <Container className={classes.containerWrapper}>
       {/* Contact Details Section */}
       <Box className={classes.contactContainer}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h3" gutterBottom style={{color:"#81B0C0", paddingBottom:"16px"}}>
           Contact Me
         </Typography>
         <Box className={classes.contactItem}>
@@ -140,7 +146,7 @@ function Contact() {
 
       {/* Contact Form Section */}
       <Box className={classes.formContainer}>
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h5" gutterBottom >
           Send me a message
         </Typography>
         <form onSubmit={handleSubmit}>

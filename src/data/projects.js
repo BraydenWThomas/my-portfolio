@@ -1,3 +1,7 @@
+import loadImages from "../utils/loadImages";
+
+const images = loadImages();
+
 export const projects = [
     {
       id: 1,
@@ -5,38 +9,38 @@ export const projects = [
       description: "A personal portfolio to showcase my skills and projects.",
       techStack: ["React", "Styled Components"],
       link: "https://github.com/BraydenWThomas/my-portfolio",
-      image: "portfolio-thumbnail.png",
+      image: images["portfolioWebsiteThumb.png"],
     },
     {
       id: 2,
-      name: "Portfolio Website",
+      name: "2",
       description: "A personal portfolio to showcase my skills and projects.",
       techStack: ["React", "Styled Components"],
       link: "https://github.com/BraydenWThomas/my-portfolio",
-      image: "portfolio-thumbnail.png",
+      image: images["GitHub200.png"],
     },
     {
       id: 3,
-      name: "Portfolio Website",
+      name: "3",
       description: "A personal portfolio to showcase my skills and projects.",
       techStack: ["React", "Styled Components"],
       link: "https://github.com/BraydenWThomas/my-portfolio",
-      image: "portfolio-thumbnail.png",
+      image: images["GitHub200.png"],
     },
     {
       id: 4,
-      name: "Portfolio Website",
+      name: "4",
       description: "A personal portfolio to showcase my skills and projects.",
       techStack: ["React", "Styled Components"],
       link: "https://github.com/BraydenWThomas/my-portfolio",
-      image: "portfolio-thumbnail.png",
+      image: images["GitHub200.png"],
     },
     {
       id: 5,
-      name: "Portfolio Website",
+      name: "5",
       description: "A personal portfolio to showcase my skills and projects.",
       techStack: ["React", "Styled Components"],
       link: "https://github.com/BraydenWThomas/my-portfolio",
-      image: "portfolio-thumbnail.png",
+      image: images["GitHub200.png"],
     },
   ];

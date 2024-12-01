@@ -18,10 +18,10 @@ const ProjectCard = ({ project }) => {
           maxWidth: 345,
           minWidth: 345,
           transition: "transform 0.3s",
-          backgroundColor: alpha(theme.palette.background.default, 0.9),
+          backgroundColor: alpha(theme.palette.background.default, 8),
           boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)", 
           "&:hover": {
-            backgroundColor: alpha(theme.palette.background.default, 0.95), 
+            backgroundColor: alpha(theme.palette.background.default, 9), 
           },
         }}
       >
@@ -32,10 +32,10 @@ const ProjectCard = ({ project }) => {
           alt={`${project.name} thumbnail`}
         />
         <CardContent>
-          <Typography variant="h5" component="div" gutterBottom>
+          <Typography variant="h5" component="div" gutterBottom color="#D8DBE2">
             {project.name}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="#ADAFB5">
             {project.description}
           </Typography>
           <Box sx={{ mt: 2, display: "flex", gap: 1, flexWrap: "wrap" }}>
