@@ -7,24 +7,24 @@ import emailjs from "emailjs-com";
 const useStyles = makeStyles({
   containerWrapper: {
     display: "flex",
-    justifyContent: "space-between", 
+    justifyContent: "space-between",
     gap: "16px",
     paddingTop: "15px",
-    flexWrap: "wrap", 
+    flexWrap: "wrap",
   },
-  contactContainer: { 
+  contactContainer: {
     paddingTop: "16px",
     textAlign: "left",
     backgroundColor: "#1C1C22",
     color: "#D8DBE2",
     borderRadius: "8px",
-    minWidth: "320px"
+    minWidth: "320px",
   },
   formContainer: {
-    width: "50%", 
+    width: "50%",
     paddingTop: "20px",
     padding: "32px",
-    backgroundColor: "#28272C", 
+    backgroundColor: "#28272C",
     color: "#D8DBE2",
     boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
     borderRadius: "16px",
@@ -41,7 +41,7 @@ const useStyles = makeStyles({
     marginRight: "16px",
     padding: "8px",
     background: "#28272C",
-    fontSize: "32px!important"
+    fontSize: "32px!important",
   },
   formField: {
     backgroundColor: "#1C1C22",
@@ -95,10 +95,10 @@ function Contact() {
 
     emailjs
       .send(
-        "YOUR_SERVICE_ID", // EmailJS service ID
-        "YOUR_TEMPLATE_ID", // EmailJS template ID
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         formData,
-        "YOUR_USER_ID" // EmailJS user ID
+        process.env.REACT_APP_EMAILJS_USER_ID
       )
       .then(() => {
         setStatus("Message sent successfully!");
@@ -109,9 +109,12 @@ function Contact() {
 
   return (
     <Container className={classes.containerWrapper}>
-      {/* Contact Details Section */}
       <Box className={classes.contactContainer}>
-        <Typography variant="h3" gutterBottom style={{color:"#81B0C0", paddingBottom:"16px"}}>
+        <Typography
+          variant="h3"
+          gutterBottom
+          style={{ color: "#81B0C0", paddingBottom: "16px" }}
+        >
           Contact Me
         </Typography>
         <Box className={classes.contactItem}>
@@ -143,10 +146,8 @@ function Contact() {
           </Box>
         </Box>
       </Box>
-
-      {/* Contact Form Section */}
       <Box className={classes.formContainer}>
-        <Typography variant="h5" gutterBottom >
+        <Typography variant="h5" gutterBottom>
           Send me a message
         </Typography>
         <form onSubmit={handleSubmit}>
