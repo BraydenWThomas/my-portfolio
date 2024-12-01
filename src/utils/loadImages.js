@@ -1,5 +1,5 @@
 const loadImages = () => {
-    const context = require.context("../assets", false, /\.(png|jpe?g|svg)$/);
+    const context = require.context("../assets/projects", false, /\.(png|jpe?g|svg)$/);
     const images = {};
     context.keys().forEach((key) => {
       const imageName = key.replace("./", ""); // Remove "./" prefix
