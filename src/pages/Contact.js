@@ -11,6 +11,7 @@ const useStyles = makeStyles({
     gap: "16px",
     paddingTop: "15px",
     flexWrap: "wrap",
+    marginTop: '36px',
   },
   contactContainer: {
     paddingTop: "16px",

@@ -169,7 +169,7 @@ function Home() {
         </Container>
 
         <Container className={classes.experienceBarModule}>
-          <Typography variant='h4'> 6 </Typography>
+          <Typography variant='h4'> 5 </Typography>
           <Typography variant='h7'> Projects Completed </Typography>
         </Container>
 

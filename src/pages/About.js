@@ -5,19 +5,29 @@ import { Container, Typography, Button } from '@mui/material';
 const useStyles = makeStyles({
   containerWrapper: {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'space-between',  
     alignItems: 'flex-start',
     paddingTop: '15px',
     width: '100%',
+    marginTop: '36px',
   },
   bodyContainer: {
-    width: '45%',
+    width: '35%',  
+    paddingRight: '20px', 
+  },
+  rightContainer: {
+    width: '60%',  
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: '#28272C!important',  
+    padding: '20px', 
+    borderRadius: '10px',  
   },
   buttonContainer: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '16px',
-    marginTop: '15px',
+    gap: '20px', 
+    marginTop: '30px',  
     alignItems: 'center',
   },
   aboutButtons: {
@@ -37,15 +47,47 @@ const useStyles = makeStyles({
     backgroundColor: '#58A4B0!Important',
     color: '#fff!Important',
   },
-  rightContainer: {
-    width: '45%',
-    display: 'flex',
-    flexDirection: 'column',
-  },
   hidden: {
     display: 'none',
   },
+  row: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    padding: '10px',
+    border: '2px solid #58A4B0', 
+    borderRadius: '10px',
+    marginBottom: '10px', 
+    backgroundColor: '#333',  
+  },
+  col1: {
+    width: '45%',  
+    color: '#fff',  
+    display: 'flex',
+    justifyContent: 'center',  
+    alignItems: 'center',  
+    textAlign: 'center',  
+  },
+  col2: {
+    width: '50%', 
+    color: '#fff',  
+    fontSize: '0.75rem', 
+    lineHeight: '1.5',   
+  },
+  aboutSummary: {
+    fontSize: '0.85rem',   
+    lineHeight: '1.5',     
+    color: '#fff',         
+    marginBottom: '20px',  
+    marginTop: '10px',     
+  },
+  centeredTitle: {
+    textAlign: 'center', 
+    marginBottom: '20px!important', 
+  },
 });
+
+
+
 
 function About() {
   const classes = useStyles();
@@ -55,83 +97,96 @@ function About() {
     <div className={classes.containerWrapper}>
       {/* Left Side */}
       <Container className={classes.bodyContainer}>
-        <Typography variant="h4">Why hire me?</Typography>
-        <Typography variant="subtitle1">
-          Details about me, some small summary maybe.
-        </Typography>
+  <Typography variant="h4" className={classes.centeredTitle}>
+    Why hire me?
+  </Typography>
+  <Typography variant="subtitle1" className={classes.aboutSummary}>
+    I'm passionate about learning and growing as a developer. With a background in Electrical Engineering and Computer Science, I thrive in collaborative environments where I can contribute, learn from others, and continually improve my skills.
+  </Typography>
 
-        <div className={classes.buttonContainer}>
-          {/* Buttons with dynamic class application */}
-          <Button
-            variant="outlined"
-            className={`${classes.aboutButtons} ${
-              visibleContainer === 'skills' ? classes.activeButton : ''
-            }`}
-            onClick={() => setVisibleContainer('skills')}
-          >
-            Key Skills
-          </Button>
+  <div className={classes.buttonContainer}>
+    {/* Buttons with dynamic class application */}
+    <Button
+      variant="outlined"
+      className={`${classes.aboutButtons} ${
+        visibleContainer === 'skills' ? classes.activeButton : ''
+      }`}
+      onClick={() => setVisibleContainer('skills')}
+    >
+      Key Skills
+    </Button>
 
-          <Button
-            variant="outlined"
-            className={`${classes.aboutButtons} ${
-              visibleContainer === 'academic' ? classes.activeButton : ''
-            }`}
-            onClick={() => setVisibleContainer('academic')}
-          >
-            Academic Highlights
-          </Button>
+    <Button
+      variant="outlined"
+      className={`${classes.aboutButtons} ${
+        visibleContainer === 'academic' ? classes.activeButton : ''
+      }`}
+      onClick={() => setVisibleContainer('academic')}
+    >
+      Academic Highlights
+    </Button>
 
-          <Button
-            variant="outlined"
-            className={`${classes.aboutButtons} ${
-              visibleContainer === 'profession' ? classes.activeButton : ''
-            }`}
-            onClick={() => setVisibleContainer('profession')}
-          >
-            Professional Experience
-          </Button>
-        </div>
-      </Container>
+    <Button
+      variant="outlined"
+      className={`${classes.aboutButtons} ${
+        visibleContainer === 'profession' ? classes.activeButton : ''
+      }`}
+      onClick={() => setVisibleContainer('profession')}
+    >
+      Professional Experience
+    </Button>
+  </div>
+</Container>
 
       {/* Right Side */}
       <Container className={classes.rightContainer}>
         {/* Skills Container */}
         <div className={visibleContainer === 'skills' ? '' : classes.hidden}>
-          <Typography variant="subtitle1">Key Skills: </Typography>
-          <Typography variant="subtitle1">
-            Programming: Python (Keras, TensorFlow), Java (Spring, RESTful APIs), C++ (Algorithm development), C# (ASP.NET, Database integration), React (Front-end design).
-          </Typography>
-          <Typography variant="subtitle1">
-            Systems: Unix-based monitoring, real-time troubleshooting, and backend performance optimization.
-          </Typography>
-          <Typography variant="subtitle1">
-            Soft Skills: Effective communication, teamwork, rapid learning, and adaptability.
-          </Typography>
+          <div className={classes.row}>
+            <Typography variant="subtitle1" className={classes.col1}>Programming</Typography>
+            <Typography variant="subtitle1" className={classes.col2}>
+              Python (Keras, TensorFlow), Java (Spring, RESTful APIs), C++ (Algorithm development), C# (ASP.NET, Database integration), React (Front-end design).
+            </Typography>
+          </div>
+          <div className={classes.row}>
+            <Typography variant="subtitle1" className={classes.col1}>Systems</Typography>
+            <Typography variant="subtitle1" className={classes.col2}>
+              Unix-based monitoring, real-time troubleshooting, and backend performance optimization.
+              Soft Skills: Effective communication, teamwork, rapid learning, and adaptability.
+            </Typography>
+          </div>
         </div>
 
         {/* Academic Container */}
         <div className={visibleContainer === 'academic' ? '' : classes.hidden}>
-          <Typography variant="subtitle1">Academic Highlights: </Typography>
-          <Typography variant="subtitle1">
-            Completed advanced courses such as Foundations of AI for STEM (High Distinction), Image Processing (Credit), and Semiconductor Device Fabrication (Distinction).
-          </Typography>
-          <Typography variant="subtitle1">
-            Capstone project: Developed a Convolutional Neural Network for Pose Estimation of a Rigid Body.
-          </Typography>
+          <div className={classes.row}>
+            <Typography variant="subtitle1" className={classes.col1}>Academic Highlights</Typography>
+            <Typography variant="subtitle1" className={classes.col2}>
+              Completed advanced courses such as Foundations of AI for STEM (High Distinction), Image Processing (Credit), and Semiconductor Device Fabrication (Distinction).
+            </Typography>
+          </div>
+          <div className={classes.row}>
+            <Typography variant="subtitle1" className={classes.col1}>Capstone Project</Typography>
+            <Typography variant="subtitle1" className={classes.col2}>
+              Developed a Convolutional Neural Network for Pose Estimation of a Rigid Body.
+            </Typography>
+          </div>
         </div>
 
         {/* Professional Container */}
-        <div
-          className={visibleContainer === 'profession' ? '' : classes.hidden}
-        >
-          <Typography variant="subtitle1">Professional Experience: </Typography>
-          <Typography variant="subtitle1">
-            System Reliability Engineer at ANZ Bank - Ensured smooth application functioning, automated routine tasks, and provided insights to stakeholders.
-          </Typography>
-          <Typography variant="subtitle1">
-            IT Consultant at FDM - Honed technical skills in Java development, agile management, and group collaboration.
-          </Typography>
+        <div className={visibleContainer === 'profession' ? '' : classes.hidden}>
+          <div className={classes.row}>
+            <Typography variant="subtitle1" className={classes.col1}>System Reliability Engineer at ANZ Bank</Typography>
+            <Typography variant="subtitle1" className={classes.col2}>
+              Ensured smooth application functioning, automated routine tasks, and provided insights to stakeholders.
+            </Typography>
+          </div>
+          <div className={classes.row}>
+            <Typography variant="subtitle1" className={classes.col1}>IT Consultant at FDM</Typography>
+            <Typography variant="subtitle1" className={classes.col2}>
+              Honed technical skills in Java development, agile management, and group collaboration.
+            </Typography>
+          </div>
         </div>
       </Container>
     </div>
