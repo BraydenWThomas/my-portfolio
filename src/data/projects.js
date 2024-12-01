@@ -13,7 +13,7 @@ export const projects = [
     },
     {
       id: 2,
-      name: "Portfolio Website",
+      name: "2",
       description: "A personal portfolio to showcase my skills and projects.",
       techStack: ["React", "Styled Components"],
       link: "https://github.com/BraydenWThomas/my-portfolio",
@@ -21,7 +21,7 @@ export const projects = [
     },
     {
       id: 3,
-      name: "Portfolio Website",
+      name: "3",
       description: "A personal portfolio to showcase my skills and projects.",
       techStack: ["React", "Styled Components"],
       link: "https://github.com/BraydenWThomas/my-portfolio",
@@ -29,7 +29,7 @@ export const projects = [
     },
     {
       id: 4,
-      name: "Portfolio Website",
+      name: "4",
       description: "A personal portfolio to showcase my skills and projects.",
       techStack: ["React", "Styled Components"],
       link: "https://github.com/BraydenWThomas/my-portfolio",
@@ -37,7 +37,7 @@ export const projects = [
     },
     {
       id: 5,
-      name: "Portfolio Website",
+      name: "5",
       description: "A personal portfolio to showcase my skills and projects.",
       techStack: ["React", "Styled Components"],
       link: "https://github.com/BraydenWThomas/my-portfolio",

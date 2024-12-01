@@ -11,12 +11,49 @@ const useStyles = makeStyles({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    gap: "16px",
+    position: "relative", 
+    width: "100%", 
+    overflow: "hidden", 
   },
   carouselContent: {
     display: "flex",
     gap: "16px",
-    overflow: "hidden",
+    width: "100%", 
+  },
+  projectCard: {
+    flexShrink: 0, 
+    flexGrow: 1, 
+    minWidth: "0", 
+  },
+  arrowButton: {
+    position: "absolute", 
+    top: "50%", 
+    transform: "translateY(-50%)", 
+    zIndex: 10, 
+    backgroundColor: "#808080!important", 
+    color: "#fff", 
+    borderRadius: "50%", 
+    height: "40px", 
+    width: "40px", 
+    display: "flex", 
+    alignItems: "center", 
+    justifyContent: "center", 
+    padding: "0", 
+    boxSizing: "border-box", 
+  },
+  leftArrow: {
+    left: "22px", 
+  },
+  rightArrow: {
+    right: "22px", 
+  },
+  leftArrowIcon: {
+    position: "relative", 
+    left: "4px", 
+  },
+  rightArrowIcon: {
+    position: "relative", 
+    left: "1px", 
   },
 });
 
@@ -46,16 +83,27 @@ const Projects = () => {
         My Projects
       </Typography>
       <Box className={classes.carouselWrapper}>
-        <IconButton onClick={handlePrevious}>
-          <ArrowBackIosIcon />
+        {/* Left Arrow Button */}
+        <IconButton
+          onClick={handlePrevious}
+          className={`${classes.arrowButton} ${classes.leftArrow}`}
+        >
+          <ArrowBackIosIcon className={classes.leftArrowIcon} />
         </IconButton>
+
+        {/* Carousel Content */}
         <Box className={classes.carouselContent}>
           {visibleProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <ProjectCard key={project.id} project={project} className={classes.projectCard} />
           ))}
         </Box>
-        <IconButton onClick={handleNext}>
-          <ArrowForwardIosIcon />
+
+        {/* Right Arrow Button */}
+        <IconButton
+          onClick={handleNext}
+          className={`${classes.arrowButton} ${classes.rightArrow}`}
+        >
+          <ArrowForwardIosIcon className={classes.rightArrowIcon}/>
         </IconButton>
       </Box>
     </Container>
