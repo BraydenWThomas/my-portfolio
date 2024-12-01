@@ -17,6 +17,7 @@ const ProjectCard = ({ project }) => {
         sx={{
           maxWidth: 345,
           minWidth: 345,
+          minHeight: 440,
           transition: "transform 0.3s",
           backgroundColor: alpha(theme.palette.background.default, 8),
           boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)", 
