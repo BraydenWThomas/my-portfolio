@@ -31,8 +31,16 @@ const useStyles = makeStyles((theme) => ({
     width: 250,
   },
   drawerListItem: {
-    textAlign: 'center',
+    textAlign: 'center!important',  
     color: '#58A4B0!important',
+    '&:not(.active):hover': {
+      backgroundColor: '#81B0C0!important', 
+      color: "white!important"
+    },
+    '&.active': {
+      backgroundColor: '#58A4B0!important', 
+      color: "white!important"
+    },
   },
   desktopMenu: {
     display: 'flex',
@@ -72,6 +80,10 @@ function Navbar() {
     setMenuOpen(!menuOpen);
   };
 
+  const handleLinkClick = () => {
+    setMenuOpen(false);  // Close the drawer when a link is clicked
+  };
+
   return (
     <AppBar className={classes.appBar} color="primary">
       <Container>
@@ -96,16 +108,16 @@ function Navbar() {
             }}
           >
             <List className={classes.drawerList}>
-              <ListItem button component={NavLink} to="/" activeClassName={classes.activeLink} className={classes.drawerListItem}>
+              <ListItem button component={NavLink} to="/" activeClassName={classes.activeLink} className={classes.drawerListItem} onClick={handleLinkClick}>
                 <ListItemText primary="Home" />
               </ListItem>
-              <ListItem button component={NavLink} to="/about" activeClassName={classes.activeLink} className={classes.drawerListItem}>
+              <ListItem button component={NavLink} to="/about" activeClassName={classes.activeLink} className={classes.drawerListItem} onClick={handleLinkClick}>
                 <ListItemText primary="About" />
               </ListItem>
-              <ListItem button component={NavLink} to="/projects" activeClassName={classes.activeLink} className={classes.drawerListItem}>
+              <ListItem button component={NavLink} to="/projects" activeClassName={classes.activeLink} className={classes.drawerListItem} onClick={handleLinkClick}>
                 <ListItemText primary="Projects" />
               </ListItem>
-              <ListItem button component={NavLink} to="/contact" activeClassName={classes.activeLink} className={classes.drawerListItem}>
+              <ListItem button component={NavLink} to="/contact" activeClassName={classes.activeLink} className={classes.drawerListItem} onClick={handleLinkClick}>
                 <ListItemText primary="Contact" />
               </ListItem>
             </List>
