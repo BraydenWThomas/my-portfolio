@@ -5,23 +5,27 @@ import { Container, Typography, Button } from '@mui/material';
 const useStyles = makeStyles({
   containerWrapper: {
     display: 'flex',
-    justifyContent: 'space-between',  
+    justifyContent: 'space-between',
     alignItems: 'flex-start',
     paddingTop: '15px',
     width: '100%',
     marginTop: '36px',
+    flexWrap: 'wrap',  
   },
   bodyContainer: {
-    width: '35%',  
-    paddingRight: '20px', 
+    maxWidth: '510px!important',
+    paddingRight: '20px',
+    minWidth: '395px!important', 
+    paddingBottom: '20px'
   },
   rightContainer: {
-    width: '60%',  
+    maxWidth: '51%!important',
     display: 'flex',
     flexDirection: 'column',
-    backgroundColor: '#28272C!important',  
-    padding: '20px', 
-    borderRadius: '10px',  
+    backgroundColor: '#28272C!important',
+    padding: '20px',
+    borderRadius: '10px',
+    minWidth: '450px!important', 
   },
   buttonContainer: {
     display: 'flex',
@@ -58,9 +62,11 @@ const useStyles = makeStyles({
     borderRadius: '10px',
     marginBottom: '10px', 
     backgroundColor: '#333',  
+    alignItems: 'center', 
+    gap: '30px', 
   },
   col1: {
-    width: '45%',  
+    width: '35%',  
     color: '#fff',  
     display: 'flex',
     justifyContent: 'center',  
@@ -68,7 +74,7 @@ const useStyles = makeStyles({
     textAlign: 'center',  
   },
   col2: {
-    width: '50%', 
+    width: '62%', 
     color: '#fff',  
     fontSize: '0.75rem', 
     lineHeight: '1.5',   
@@ -145,7 +151,15 @@ function About() {
           <div className={classes.row}>
             <Typography variant="subtitle1" className={classes.col1}>Programming</Typography>
             <Typography variant="subtitle1" className={classes.col2}>
-              Python (Keras, TensorFlow), Java (Spring, RESTful APIs), C++ (Algorithm development), C# (ASP.NET, Database integration), React (Front-end design).
+            Python (Keras, TensorFlow),
+  <br />
+  Java (Spring, RESTful APIs),
+  <br />
+  C++ (Algorithm development),
+  <br />
+  C# (ASP.NET, Database integration),
+  <br />
+  React (Front-end design).
             </Typography>
           </div>
           <div className={classes.row}>
