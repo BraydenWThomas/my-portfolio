@@ -6,7 +6,7 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
   contentWrapper: {
-    marginTop: "36px", 
+    marginTop: "106px", 
     marginBottom: "36px",
   },
   gridContainer: {
