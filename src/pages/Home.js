@@ -19,7 +19,7 @@ const useStyles = makeStyles({
     justifyContent: 'space-between', 
     alignItems: 'flex-start', 
     gap: '16px', 
-    paddingTop: '15px',  
+    paddingTop: '85px',  
   },
   bodyContainer: {
     // backgroundColor: 'blue',
