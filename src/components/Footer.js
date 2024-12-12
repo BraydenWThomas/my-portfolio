@@ -1,10 +1,10 @@
 import React from 'react';
-import { Container, Grid2, Typography, Link, Box } from '@mui/material';
+import { Container, Grid2, Typography, Box } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: 'red',
     color: '#D8DBE2',
     padding: theme.spacing(4, 0),
     marginTop: 'auto',
@@ -38,35 +38,42 @@ function Footer() {
         <Grid2 container spacing={4} justifyContent="center">
           <Grid2 item xs={12} sm={4} className={classes.footerGridItem}>
             <Typography variant="h6">Quick Links</Typography>
-            <Link href="/" className={classes.footerLink} variant="body2">
+            <NavLink to="/" className={classes.footerLink}>
               Home
-            </Link>
-            <Link href="/about" className={classes.footerLink} variant="body2">
+            </NavLink>
+            <NavLink to="/about" className={classes.footerLink}>
               About
-            </Link>
-            <Link href="/projects" className={classes.footerLink} variant="body2">
+            </NavLink>
+            <NavLink to="/projects" className={classes.footerLink}>
               Projects
-            </Link>
-            <Link href="/contact" className={classes.footerLink} variant="body2">
+            </NavLink>
+            <NavLink to="/contact" className={classes.footerLink}>
               Contact
-            </Link>
+            </NavLink>
           </Grid2>
           <Grid2 item xs={12} sm={4} className={classes.footerGridItem}>
-            <Typography variant="h6">Follow Us</Typography>
-            <Link href="#" className={classes.footerLink} variant="body2">
-              Facebook
-            </Link>
-            <Link href="#" className={classes.footerLink} variant="body2">
-              Twitter
-            </Link>
-            <Link href="#" className={classes.footerLink} variant="body2">
+            <Typography variant="h6">Follow Me</Typography>
+            <a
+              href="https://github.com/BraydenWThomas"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={classes.footerLink}
+            >
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/brayden-w-thomas/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={classes.footerLink}
+            >
               LinkedIn
-            </Link>
+            </a>
           </Grid2>
           <Grid2 item xs={12} sm={4} className={classes.footerGridItem}>
             <Typography variant="h6">Contact</Typography>
-            <Typography variant="body2">Email: info@example.com</Typography>
-            <Typography variant="body2">Phone: +123 456 7890</Typography>
+            <Typography variant="body2">Email: Brayden.William.Thomas@gmail.com</Typography>
+            <Typography variant="body2">Phone: +61 484 339 787</Typography>
           </Grid2>
         </Grid2>
         <Typography variant="body2" className={classes.footerText}>
