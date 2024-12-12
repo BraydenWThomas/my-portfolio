@@ -23,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
   },
   footerGridItem: {
     display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'flex-start',  // Align content to the start of the grid item
+    alignItems: 'flex-start',      // Align items to the top of the grid item
     flexDirection: 'column',
   },
 }));

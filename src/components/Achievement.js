@@ -51,6 +51,8 @@ const Achievement = ({ title, description, date, direction }) => {
         <Typography
           variant="caption"
           sx={{
+            width: '110px',
+            height: '40px',
             position: 'absolute',
             top: '50%',
             left: '50%',
@@ -61,6 +63,10 @@ const Achievement = ({ title, description, date, direction }) => {
             color: '#58A4B0',
             fontWeight: 'bold',
             zIndex: 2,
+            textAlign: 'center',
+            display:'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
         >
           {date}
@@ -73,8 +79,8 @@ const Achievement = ({ title, description, date, direction }) => {
         sx={{
           transform: isVisible
             ? direction === 'left'
-              ? 'translateX(calc(-50% - 30px))' // Stop slightly left of the pole
-              : 'translateX(calc(50% + 30px))' // Stop slightly right of the pole
+              ? 'translateX(calc(-50% - 80px))' // Stop slightly left of the pole
+              : 'translateX(calc(50% + 80px))' // Stop slightly right of the pole
             : direction === 'left'
             ? 'translateX(-100%)'
             : 'translateX(100%)',
