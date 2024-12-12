@@ -14,47 +14,38 @@ import { createTheme, ThemeProvider } from '@mui/material';
 const theme = createTheme({
   palette: {
     primary: {
-       main: "#58A4B0", 
+      main: "#58A4B0",
     },
     secondary: {
-       main: "#81B0C0",
+      main: "#81B0C0",
     },
     background: {
-      //default: "#28272C", 
-      default: "#28272C", 
+      default: "#28272C",
     },
   },
-
   typography: {
     fontFamily: "JetBrains Mono",
     color: '#D8DBE2',
   }
-
-// #1C1C22
-// #D8DBE2
-// #A9BCD0
-// #58A4B0
-
-
 });
 
 function App() {
- 
-
   return (
     <ThemeProvider theme={theme}>
-    <Router>
-      <Container style={{backgroundColor: "#1c1c22"}}>
-        <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+      <Router>
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+          <Navbar />
+          <Container style={{ flex: 1, backgroundColor: "#1c1c22" }}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </Container>
           <Footer />
-      </Container>
-    </Router>
+        </div>
+      </Router>
     </ThemeProvider>
   );
 }

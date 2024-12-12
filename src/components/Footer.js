@@ -1,13 +1,13 @@
 import React from 'react';
-import { Container, Grid2, Typography, Link, Box } from '@mui/material';
+import { Container, Typography, Link, Box } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: 'red',
+    backgroundColor: '#1c1c22', // Match the theme background
     color: '#D8DBE2',
     padding: theme.spacing(4, 0),
-    marginTop: 'auto',
+    marginTop: 'auto', // Ensures the footer sticks to the bottom of the page
   },
   footerLink: {
     color: '#58A4B0',
@@ -35,40 +35,6 @@ function Footer() {
   return (
     <Box component="footer" className={classes.footer}>
       <Container>
-        <Grid2 container spacing={4} justifyContent="center">
-          <Grid2 item xs={12} sm={4} className={classes.footerGridItem}>
-            <Typography variant="h6">Quick Links</Typography>
-            <Link href="/" className={classes.footerLink} variant="body2">
-              Home
-            </Link>
-            <Link href="/about" className={classes.footerLink} variant="body2">
-              About
-            </Link>
-            <Link href="/projects" className={classes.footerLink} variant="body2">
-              Projects
-            </Link>
-            <Link href="/contact" className={classes.footerLink} variant="body2">
-              Contact
-            </Link>
-          </Grid2>
-          <Grid2 item xs={12} sm={4} className={classes.footerGridItem}>
-            <Typography variant="h6">Follow Us</Typography>
-            <Link href="#" className={classes.footerLink} variant="body2">
-              Facebook
-            </Link>
-            <Link href="#" className={classes.footerLink} variant="body2">
-              Twitter
-            </Link>
-            <Link href="#" className={classes.footerLink} variant="body2">
-              LinkedIn
-            </Link>
-          </Grid2>
-          <Grid2 item xs={12} sm={4} className={classes.footerGridItem}>
-            <Typography variant="h6">Contact</Typography>
-            <Typography variant="body2">Email: info@example.com</Typography>
-            <Typography variant="body2">Phone: +123 456 7890</Typography>
-          </Grid2>
-        </Grid2>
         <Typography variant="body2" className={classes.footerText}>
           &copy; {new Date().getFullYear()} Brayden. All Rights Reserved.
         </Typography>
