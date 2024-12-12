@@ -7,12 +7,11 @@ import emailjs from "emailjs-com";
 const useStyles = makeStyles({
   containerWrapper: {
     display: "flex",
-    justifyContent: "space-between",
     gap: "16px",
     paddingTop: "85px",
     flexWrap: "wrap", 
     marginTop: '36px',
-    justifyContent: "center", 
+    justifyContent: "center",
   },
   contactContainer: {
     paddingTop: "16px",

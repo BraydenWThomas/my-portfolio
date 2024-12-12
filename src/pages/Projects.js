@@ -12,9 +12,9 @@ const useStyles = makeStyles({
   gridContainer: {
     marginTop: "16px",
     display: 'flex',
-    justifyContent: 'center', // Centers items horizontally
-    alignItems: 'center', // Centers items vertically
-    flexWrap: 'wrap', // Wraps items on smaller screens
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    flexWrap: 'wrap', 
   },
 });
 
