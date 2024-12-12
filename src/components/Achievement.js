@@ -10,15 +10,15 @@ const Achievement = ({ title, description, date, direction }) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true); // Element is visible
+          setIsVisible(true);
         } else {
-          setIsVisible(false); // Element is out of view
+          setIsVisible(false);
         }
       },
       {
-        root: null, 
-        rootMargin: '-30% 0% -30% 0%', // Trigger when the element is in the middle 40% of the viewport
-        threshold: 0.2, // 20% of the element must be visible
+        root: null,
+        rootMargin: '-30% 0% -30% 0%',
+        threshold: 0.2,
       }
     );
 
@@ -34,40 +34,76 @@ const Achievement = ({ title, description, date, direction }) => {
   }, []);
 
   return (
-    <Box
-      ref={ref}
-      sx={{
-        transform: isVisible
-          ? 'translateX(0)' 
-          : direction === 'left'
-          ? 'translateX(-100%)' // Move off-screen to the left
-          : 'translateX(100%)', // Move off-screen to the right
-        opacity: isVisible ? 1 : 0, 
-        transition: 'transform 1.3s ease, opacity 1.3s ease',
-        border: '1px solid #58A4B0',
-        borderRadius: '8px',
-        padding: '16px',
-        marginBottom: '16px',
-        backgroundColor: '#D8DBE2',
-        width: '350px', 
-        height: '250px', 
-        display: 'flex', 
-        flexDirection: 'column', 
-        justifyContent: 'center', 
-        alignItems: 'center', 
-        textAlign: 'center', 
-        boxSizing: 'border-box', 
-      }}
-    >
-      <Typography variant="h6" sx={{ color: '#1C1C22', fontWeight: 'bold' }}>
-        {title}
-      </Typography>
-      <Typography variant="body1" sx={{ color: '#1C1C22', marginTop: '8px' }}>
-        {description}
-      </Typography>
-      <Typography variant="caption" sx={{ display: 'block', marginTop: '12px', color: '#58A4B0' }}>
-        {date}
-      </Typography>
+    <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+      {/* Pole */}
+      <Box
+        sx={{
+          position: 'absolute',
+          height: '100%',
+          width: '2px', 
+          backgroundColor: '#58A4B0',
+          zIndex: 1,
+          left: '50%', 
+          transform: 'translateX(-50%)',
+        }}
+      >
+        {/* Date */}
+        <Typography
+          variant="caption"
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            backgroundColor: '#FFF', 
+            padding: '2px 4px',
+            borderRadius: '4px',
+            color: '#58A4B0',
+            fontWeight: 'bold',
+            zIndex: 2,
+          }}
+        >
+          {date}
+        </Typography>
+      </Box>
+
+      {/* Achievement */}
+      <Box
+        ref={ref}
+        sx={{
+          transform: isVisible
+            ? direction === 'left'
+              ? 'translateX(calc(-50% - 30px))' // Stop slightly left of the pole
+              : 'translateX(calc(50% + 30px))' // Stop slightly right of the pole
+            : direction === 'left'
+            ? 'translateX(-100%)'
+            : 'translateX(100%)',
+          opacity: isVisible ? 1 : 0,
+          transition: 'transform 1.3s ease, opacity 1.3s ease',
+          border: '1px solid #58A4B0',
+          borderRadius: '8px',
+          padding: '16px',
+          marginBottom: '16px',
+          backgroundColor: '#D8DBE2',
+          width: '350px',
+          height: '250px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          textAlign: 'center',
+          boxSizing: 'border-box',
+          position: 'relative', 
+          zIndex: 0,
+        }}
+      >
+        <Typography variant="h6" sx={{ color: '#1C1C22', fontWeight: 'bold' }}>
+          {title}
+        </Typography>
+        <Typography variant="body1" sx={{ color: '#1C1C22', marginTop: '8px' }}>
+          {description}
+        </Typography>
+      </Box>
     </Box>
   );
 };
