@@ -31,10 +31,11 @@ const useStyles = makeStyles({
 
   },
   pictureContainer: {
-    // backgroundColor: 'green',
+    //  backgroundColor: 'green',
     padding: '16px',
     flex: '1 1 30%', 
     minWidth: '30%', 
+    maxWidth: '40%!important',
     position: 'relative',
     display: 'flex',
     justifyContent: 'center',
@@ -47,7 +48,7 @@ const useStyles = makeStyles({
     height: '99%',
     border: '6px dashed #58A4B0', 
     borderRadius: '50%', 
-    animation: '$rotate 60s linear infinite',
+    animation: '$rotate 80s linear infinite',
     transformOrigin: 'center', 
     pointerEvents: 'none', 
     boxSizing: 'border-box', 
@@ -194,6 +195,7 @@ function Home() {
 
       {/* Animated History */}
       <Container className={classes.animatedHistory}>
+      <Typography variant='h3' style={{paddingBottom:"40px"}}> Experience </Typography>
         {achievementsData.map((achievement, index) => (
           <Achievement 
             key={achievement.id} 
