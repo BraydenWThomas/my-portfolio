@@ -189,11 +189,6 @@ function Home() {
           <Typography variant='h4'> 3 </Typography>
           <Typography variant='h7'> Technologies Mastered </Typography>
         </Container>
-
-        <Container className={classes.experienceBarModule}>
-          <Typography variant='h4'> 141 </Typography>
-          <Typography variant='h7'> Code Commits </Typography>
-        </Container>
       </Container>
 
 
