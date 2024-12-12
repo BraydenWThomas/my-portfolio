@@ -3,6 +3,8 @@ import { Container, Typography, Button, IconButton } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Box from '@mui/material/Box';
 import DownloadIcon from '@mui/icons-material/FileDownload';
+import achievementsData from '../data/achievementsData'; 
+import Achievement from '../components/Achievement'; 
 
 // #1C1C22
 // #D8DBE2
@@ -107,6 +109,16 @@ const useStyles = makeStyles({
     gap: '8px', 
     textAlign: 'center', 
   },
+
+  animatedHistory: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginTop: '32px',
+    overflow: 'hidden',
+  },
+  
+
 });
 
 function Home() {
@@ -183,6 +195,21 @@ function Home() {
           <Typography variant='h7'> Code Commits </Typography>
         </Container>
       </Container>
+
+
+      {/* Animated History */}
+      <Container className={classes.animatedHistory}>
+        {achievementsData.map((achievement, index) => (
+          <Achievement 
+            key={achievement.id} 
+            title={achievement.title} 
+            description={achievement.description} 
+            date={achievement.date} 
+            direction={index % 2 === 0 ? 'left' : 'right'} // Alternate directions
+          />
+        ))}
+      </Container>
+
 
     </div>
   );

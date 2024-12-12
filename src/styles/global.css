@@ -12,3 +12,18 @@ body {
     list-style: none;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 30%;
+    bottom: 30%;
+    left: 0;
+    right: 0;
+    background-color: rgba(88, 164, 176, 0.1); /* Light highlight */
+    pointer-events: none;
+    z-index: 1000;
+  }
