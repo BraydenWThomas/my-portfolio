@@ -117,6 +117,8 @@ const useStyles = makeStyles({
     alignItems: 'center',
     marginTop: '32px',
     overflow: 'hidden',
+    paddingTop: '64px',
+    paddingBottom: '64px',
   },
   
 
@@ -195,7 +197,7 @@ function Home() {
 
       {/* Animated History */}
       <Container className={classes.animatedHistory}>
-      <Typography variant='h3' style={{paddingBottom:"40px"}}> Experience </Typography>
+      <Typography variant='h3' style={{paddingBottom:"64px"}}> Experience </Typography>
         {achievementsData.map((achievement, index) => (
           <Achievement 
             key={achievement.id} 

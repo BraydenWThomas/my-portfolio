@@ -1,3 +1,10 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
     font-family: "JetBrains Mono";
     margin: 0;
@@ -14,16 +21,18 @@ body {
 
   html {
     scroll-behavior: smooth;
+    /* overflow: -moz-scrollbars-vertical;  */
+    overflow-y: scroll;
   }
 
-  body::before {
+  /* body::before {
     content: '';
     position: fixed;
     top: 30%;
     bottom: 30%;
     left: 0;
     right: 0;
-    background-color: rgba(88, 164, 176, 0.1); /* Light highlight */
+    background-color: rgba(88, 164, 176, 0.1); 
     pointer-events: none;
     z-index: 1000;
-  }
+  } */
