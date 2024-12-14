@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
     color: '#D8DBE2',
     padding: theme.spacing(4, 0),
     marginTop: 'auto',
+    backgroundColor: '#303F52', // Slightly lighter background color
+    width: '100vw',            // Full page width
+    position: 'relative',      // Ensure it spans across the entire page
   },
   footerLink: {
     color: '#58A4B0',
@@ -23,8 +26,8 @@ const useStyles = makeStyles((theme) => ({
   },
   footerGridItem: {
     display: 'flex',
-    justifyContent: 'flex-start',  // Align content to the start of the grid item
-    alignItems: 'flex-start',      // Align items to the top of the grid item
+    justifyContent: 'flex-start',  
+    alignItems: 'flex-start',      
     flexDirection: 'column',
   },
 }));
