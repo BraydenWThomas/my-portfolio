@@ -21,7 +21,8 @@ body {
 
   html {
     scroll-behavior: smooth;
-    scrollbar-gutter: stable;
+    /* overflow: -moz-scrollbars-vertical;  */
+    overflow-y: scroll;
   }
 
   /* body::before {
