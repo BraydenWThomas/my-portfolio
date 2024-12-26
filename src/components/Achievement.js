@@ -34,7 +34,11 @@ const Achievement = ({ title, description, date, direction }) => {
   }, []);
 
   return (
-    <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+    <Box sx={{ 
+          position: 'relative', 
+          display: 'flex', 
+          alignItems: 'center',
+          }}>
       {/* Pole */}
       <Box
         sx={{
@@ -78,10 +82,9 @@ const Achievement = ({ title, description, date, direction }) => {
         ref={ref}
         sx={{
           transform: isVisible
-            ? {
-                xs: 'translateX(-50%)', // Center the card for small screens
-                sm: direction === 'left' ? 'translateX(calc(-50% - 80px))' : 'translateX(calc(50% + 80px))',
-              }
+            ? direction === 'left'
+              ? 'translateX(calc(-50% - 80px))' // Stop slightly left of the pole
+              : 'translateX(calc(50% + 80px))' // Stop slightly right of the pole
             : direction === 'left'
             ? 'translateX(-100%)'
             : 'translateX(100%)',
@@ -105,7 +108,7 @@ const Achievement = ({ title, description, date, direction }) => {
           zIndex: 0,
           '@media (max-width: 950px)': {
             left: '50%',
-            transform: 'translateX(-50%)', // Center-align the cards
+            transform: 'translateX(-50%) translateY(130px)',
           },
         }}
       >
