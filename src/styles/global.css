@@ -25,14 +25,14 @@ body {
     overflow-y: scroll;
   }
 
-  /* body::before {
+  body::before {
     content: '';
     position: fixed;
-    top: 30%;
-    bottom: 30%;
+    top: 20%;
+    bottom: 20%;
     left: 0;
     right: 0;
     background-color: rgba(88, 164, 176, 0.1); 
     pointer-events: none;
     z-index: 1000;
-  } */
+  }
