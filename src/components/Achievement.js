@@ -35,10 +35,10 @@ const Achievement = ({ title, description, date, direction }) => {
 
   return (
     <Box sx={{ 
-          position: 'relative', 
-          display: 'flex', 
-          alignItems: 'center',
-          }}>
+      position: 'relative', 
+      display: 'flex', 
+      alignItems: 'center', 
+    }}>
       {/* Pole */}
       <Box
         sx={{
@@ -49,6 +49,7 @@ const Achievement = ({ title, description, date, direction }) => {
           zIndex: 1,
           left: '50%',
           transform: 'translateX(-50%)',
+          
         }}
       >
         {/* Date */}
@@ -66,17 +67,20 @@ const Achievement = ({ title, description, date, direction }) => {
             borderRadius: '4px',
             color: '#58A4B0',
             fontWeight: 'bold',
-            zIndex: 2,
+            zIndex: 3,
             textAlign: 'center',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            '@media (max-width: 950px)': {
+            transform: 'translate(-50%) translateY(-60px)', 
+          },
           }}
         >
           {date}
         </Typography>
       </Box>
-
+    
       {/* Achievement */}
       <Box
         ref={ref}
@@ -108,7 +112,10 @@ const Achievement = ({ title, description, date, direction }) => {
           zIndex: 0,
           '@media (max-width: 950px)': {
             left: '50%',
-            transform: 'translateX(-50%) translateY(130px)',
+            transform: 'translateX(-50%) translateY(200px)',
+            marginTop: '0px',
+            marginBottom: '200px',
+            zIndex: 2,
           },
         }}
       >
