@@ -34,17 +34,22 @@ const Achievement = ({ title, description, date, direction }) => {
   }, []);
 
   return (
-    <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+    <Box sx={{ 
+      position: 'relative', 
+      display: 'flex', 
+      alignItems: 'center', 
+    }}>
       {/* Pole */}
       <Box
         sx={{
           position: 'absolute',
           height: '100%',
-          width: '2px', 
+          width: '2px',
           backgroundColor: '#58A4B0',
           zIndex: 1,
-          left: '50%', 
+          left: '50%',
           transform: 'translateX(-50%)',
+          
         }}
       >
         {/* Date */}
@@ -57,22 +62,25 @@ const Achievement = ({ title, description, date, direction }) => {
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            backgroundColor: '#FFF', 
+            backgroundColor: '#FFF',
             padding: '2px 4px',
             borderRadius: '4px',
             color: '#58A4B0',
             fontWeight: 'bold',
-            zIndex: 2,
+            zIndex: 3,
             textAlign: 'center',
-            display:'flex',
+            display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            '@media (max-width: 950px)': {
+            transform: 'translate(-50%) translateY(-60px)', 
+          },
           }}
         >
           {date}
         </Typography>
       </Box>
-
+    
       {/* Achievement */}
       <Box
         ref={ref}
@@ -92,16 +100,23 @@ const Achievement = ({ title, description, date, direction }) => {
           marginTop: '60px',
           marginBottom: '60px',
           backgroundColor: '#D8DBE2',
-          width: '350px',
-          height: '250px',
+          width: "350px",
+          height: 'auto',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
           textAlign: 'center',
           boxSizing: 'border-box',
-          position: 'relative', 
+          position: 'relative',
           zIndex: 0,
+          '@media (max-width: 950px)': {
+            left: '50%',
+            transform: 'translateX(-50%) translateY(200px)',
+            marginTop: '0px',
+            marginBottom: '200px',
+            zIndex: 2,
+          },
         }}
       >
         <Typography variant="h6" sx={{ color: '#1C1C22', fontWeight: 'bold' }}>

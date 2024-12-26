@@ -8,9 +8,9 @@ const useStyles = makeStyles((theme) => ({
     color: '#D8DBE2',
     padding: theme.spacing(4, 0),
     marginTop: 'auto',
-    backgroundColor: '#303F52', // Slightly lighter background color
-    width: '100vw',            // Full page width
-    position: 'relative',      // Ensure it spans across the entire page
+    backgroundColor: '#303F52', 
+    width: '100vw',            
+    position: 'relative',      
   },
   footerLink: {
     color: '#58A4B0',
@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   footerText: {
+    paddingTop: '32px',
     textAlign: 'center',
     color: '#D8DBE2',
     fontSize: '0.9rem',
