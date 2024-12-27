@@ -72,8 +72,27 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: "space-between", 
     alignItems: 'center',  
-     paddingTop: '16px',
-    width: '100%', 
+    paddingTop: '16px',
+    width: '100%!important', 
+    '@media (max-width: 600px)': {
+      padding: "0px!important", 
+      margin: "0px!important", 
+          },
+  },
+
+  experienceBarModule:{
+    // backgroundColor: 'green',
+    display: 'flex',
+    flexDirection: 'column', 
+    alignItems: 'center', 
+    maxWidth: '220px',
+    paddingTop: '8px', 
+    gap: '8px', 
+    textAlign: 'center', 
+    '@media (max-width:  600px)': {
+      padding: "0px!important", 
+      margin: "0px!important",  
+          },
   },
  
   buttonBar:{
@@ -100,16 +119,6 @@ const useStyles = makeStyles({
     borderRadius: '50px !important' 
   },
 
-  experienceBarModule:{
-    // backgroundColor: 'green',
-    display: 'flex',
-    flexDirection: 'column', 
-    alignItems: 'center', 
-    width: '220px',
-    paddingTop: '8px', 
-    gap: '8px', 
-    textAlign: 'center', 
-  },
 
   animatedHistory: {
     display: 'flex',
