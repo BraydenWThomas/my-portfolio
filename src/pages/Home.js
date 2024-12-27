@@ -107,7 +107,6 @@ const useStyles = makeStyles({
     alignItems: 'center', 
     width: '220px',
     paddingTop: '8px', 
-    gap: '8px', 
     textAlign: 'center', 
   },
 
