@@ -119,7 +119,6 @@ const useStyles = makeStyles({
     borderRadius: '50px !important' 
   },
 
-
   animatedHistory: {
     display: 'flex',
     flexDirection: 'column',
