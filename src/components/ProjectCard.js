@@ -69,7 +69,7 @@ const ProjectCard = ({ project }) => {
       </Card>
 
       {/* Full-Size Image Overlay */}
-      <Dialog open={openOverlay} onClose={handleCloseOverlay} maxWidth="lg" fullWidth>
+      <Dialog open={openOverlay} onClose={handleCloseOverlay} maxWidth="lg" fullWidth disableScrollLock>
         <DialogContent>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <img
