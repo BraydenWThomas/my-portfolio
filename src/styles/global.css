@@ -25,7 +25,7 @@ body {
     overflow-y: scroll;
   }
 
-  body::before {
+  /* body::before {
     content: '';
     position: fixed;
     top: 20%;
@@ -35,4 +35,4 @@ body {
     background-color: rgba(88, 164, 176, 0.1); 
     pointer-events: none;
     z-index: 1000;
-  }
+  } */

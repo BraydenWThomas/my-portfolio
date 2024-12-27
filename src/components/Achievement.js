@@ -17,7 +17,7 @@ const Achievement = ({ title, description, date, direction }) => {
       },
       {
         root: null,
-        rootMargin: '-30% 0% -30% 0%',
+        rootMargin: '-40% 0% -40% 0%',
         threshold: 0.2,
       }
     );
@@ -112,7 +112,7 @@ const Achievement = ({ title, description, date, direction }) => {
           zIndex: 0,
           '@media (max-width: 950px)': {
             left: '50%',
-            transform: 'translateX(-50%) translateY(200px)',
+            transform: 'translateX(-50%) translateY(230px)',
             marginTop: '0px',
             marginBottom: '200px',
             zIndex: 2,
