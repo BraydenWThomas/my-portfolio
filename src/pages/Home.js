@@ -106,7 +106,7 @@ const useStyles = makeStyles({
     flexDirection: 'column', 
     alignItems: 'center', 
     width: '220px',
-    padding: '8px', 
+    paddingTop: '8px', 
     gap: '8px', 
     textAlign: 'center', 
   },
