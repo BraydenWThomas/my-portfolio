@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { Card, CardContent, CardMedia, Typography, Box, Chip, Button, Dialog, DialogContent } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules"; // Import modules explicitly
 import { useTheme, alpha } from "@mui/material/styles";
 import loadImages from "../utils/loadImages";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 
 const ProjectCard = ({ project }) => {
     const theme = useTheme();
@@ -20,7 +25,7 @@ const ProjectCard = ({ project }) => {
         setOpenOverlay(false);
     };
 
-    const firstImage = `1.png`; // Assume first image in each folder is named "1.png"
+    const firstImage = `1.png`; // First image shown is "1.png"
 
     return (
         <div>
@@ -72,10 +77,11 @@ const ProjectCard = ({ project }) => {
             <Dialog open={openOverlay} onClose={handleCloseOverlay} maxWidth="lg" fullWidth disableScrollLock>
                 <DialogContent>
                     <Swiper
-                        spaceBetween={30}
-                        slidesPerView={1}
+                        modules={[Navigation, Pagination]} 
+                        spaceBetween={0} 
+                        slidesPerView={1} 
                         navigation
-                        pagination={{ clickable: true }}
+                        pagination={{ clickable: true }} 
                     >
                         {Object.keys(images).map((key) => (
                             <SwiperSlide key={key}>
