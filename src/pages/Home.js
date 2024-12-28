@@ -206,15 +206,17 @@ function Home() {
       {/* Animated History */}
       <Container className={classes.animatedHistory}>
       <Typography variant='h3' style={{paddingBottom:"64px"}}> Experience </Typography>
-        {achievementsData.map((achievement, index) => (
-          <Achievement 
-            key={achievement.id} 
-            title={achievement.title} 
-            description={achievement.description} 
-            date={achievement.date} 
-            direction={index % 2 === 0 ? 'left' : 'right'} // Alternate directions
-          />
-        ))}
+      {achievementsData.map((achievement, index) => (
+  <Achievement 
+    key={achievement.id} 
+    title={achievement.title} 
+    description={achievement.description} 
+    dateLine1={achievement.dateLine1}
+    dateLine2={achievement.dateLine2} 
+    direction={index % 2 === 0 ? 'left' : 'right'} // Alternate directions
+  />
+))}
+
       </Container>
 
 
