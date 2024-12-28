@@ -61,10 +61,12 @@ const Achievement = ({ title, description, dateLine1, dateLine2, direction }) =>
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            backgroundColor: '#FFF',
-            padding: '2px 4px',
             borderRadius: '4px',
-            color: '#58A4B0',
+
+            backgroundColor: '#FFF',
+            color: 'black',
+
+            padding: '2px 4px',
             fontWeight: 'bold',
             zIndex: 3,
             textAlign: 'center',
