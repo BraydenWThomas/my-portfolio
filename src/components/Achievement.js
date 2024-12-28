@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Typography, Box } from '@mui/material';
 import PropTypes from 'prop-types';
 
-const Achievement = ({ title, description, date, direction }) => {
+const Achievement = ({ title, description, dateLine1, dateLine2, direction }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef();
 
@@ -49,7 +49,6 @@ const Achievement = ({ title, description, date, direction }) => {
           zIndex: 1,
           left: '50%',
           transform: 'translateX(-50%)',
-          
         }}
       >
         {/* Date */}
@@ -73,11 +72,17 @@ const Achievement = ({ title, description, date, direction }) => {
             justifyContent: 'center',
             alignItems: 'center',
             '@media (max-width: 950px)': {
-            transform: 'translate(-50%) translateY(-60px)', 
-          },
+              transform: 'translate(-50%) translateY(-60px)', 
+            },
           }}
         >
-          {date}
+          {dateLine1}
+          {dateLine2 && (
+            <>
+              <br />
+              {dateLine2}
+            </>
+          )}
         </Typography>
       </Box>
     
@@ -133,7 +138,8 @@ const Achievement = ({ title, description, date, direction }) => {
 Achievement.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
+  dateLine1: PropTypes.string.isRequired,
+  dateLine2: PropTypes.string,
   direction: PropTypes.oneOf(['left', 'right']).isRequired,
 };
 
