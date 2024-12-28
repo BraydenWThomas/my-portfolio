@@ -3,6 +3,8 @@ import { Container, Typography, Button, IconButton } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Box from '@mui/material/Box';
 import DownloadIcon from '@mui/icons-material/FileDownload';
+import achievementsData from '../data/achievementsData'; 
+import Achievement from '../components/Achievement'; 
 
 // #1C1C22
 // #D8DBE2
@@ -29,10 +31,11 @@ const useStyles = makeStyles({
 
   },
   pictureContainer: {
-    // backgroundColor: 'green',
+    //  backgroundColor: 'green',
     padding: '16px',
     flex: '1 1 30%', 
-    minWidth: '30%', 
+    minWidth: '35%', 
+    maxWidth: '450px!important',
     position: 'relative',
     display: 'flex',
     justifyContent: 'center',
@@ -45,7 +48,7 @@ const useStyles = makeStyles({
     height: '99%',
     border: '6px dashed #58A4B0', 
     borderRadius: '50%', 
-    animation: '$rotate 60s linear infinite',
+    animation: '$rotate 80s linear infinite',
     transformOrigin: 'center', 
     pointerEvents: 'none', 
     boxSizing: 'border-box', 
@@ -69,8 +72,27 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: "space-between", 
     alignItems: 'center',  
-     paddingTop: '16px',
-    width: '100%', 
+    paddingTop: '16px',
+    width: '100%!important', 
+    '@media (max-width: 600px)': {
+      padding: "0px!important", 
+      margin: "0px!important", 
+          },
+  },
+
+  experienceBarModule:{
+    // backgroundColor: 'green',
+    display: 'flex',
+    flexDirection: 'column', 
+    alignItems: 'center', 
+    maxWidth: '220px',
+    paddingTop: '8px', 
+    gap: '8px', 
+    textAlign: 'center', 
+    '@media (max-width:  600px)': {
+      padding: "0px!important", 
+      margin: "0px!important",  
+          },
   },
  
   buttonBar:{
@@ -97,16 +119,17 @@ const useStyles = makeStyles({
     borderRadius: '50px !important' 
   },
 
-  experienceBarModule:{
-    // backgroundColor: 'green',
+  animatedHistory: {
     display: 'flex',
-    flexDirection: 'column', 
-    alignItems: 'center', 
-    width: '220px',
-    padding: '8px', 
-    gap: '8px', 
-    textAlign: 'center', 
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginTop: '32px',
+    overflow: 'hidden',
+    paddingTop: '64px',
+    paddingBottom: '64px',
   },
+  
+
 });
 
 function Home() {
@@ -177,12 +200,25 @@ function Home() {
           <Typography variant='h4'> 3 </Typography>
           <Typography variant='h7'> Technologies Mastered </Typography>
         </Container>
-
-        <Container className={classes.experienceBarModule}>
-          <Typography variant='h4'> 141 </Typography>
-          <Typography variant='h7'> Code Commits </Typography>
-        </Container>
       </Container>
+
+
+      {/* Animated History */}
+      <Container className={classes.animatedHistory}>
+      <Typography variant='h3' style={{paddingBottom:"64px"}}> Experience </Typography>
+      {achievementsData.map((achievement, index) => (
+  <Achievement 
+    key={achievement.id} 
+    title={achievement.title} 
+    description={achievement.description} 
+    dateLine1={achievement.dateLine1}
+    dateLine2={achievement.dateLine2} 
+    direction={index % 2 === 0 ? 'left' : 'right'} // Alternate directions
+  />
+))}
+
+      </Container>
+
 
     </div>
   );
