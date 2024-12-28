@@ -1,87 +1,98 @@
 import React, { useState } from "react";
 import { Card, CardContent, CardMedia, Typography, Box, Chip, Button, Dialog, DialogContent } from "@mui/material";
-import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { useTheme, alpha } from "@mui/material/styles";
+import loadImages from "../utils/loadImages";
 
 const ProjectCard = ({ project }) => {
-  const theme = useTheme();
-  const [openOverlay, setOpenOverlay] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
+    const theme = useTheme();
+    const [openOverlay, setOpenOverlay] = useState(false);
+    const [images, setImages] = useState({});
 
-  const handleImageClick = () => {
-    setSelectedImage(project.image); // Set the selected image to the clicked image
-    setOpenOverlay(true); // Open the overlay
-  };
+    // Load images when modal is opened
+    const handleImageClick = () => {
+        const loadedImages = loadImages(project.folder);
+        setImages(loadedImages);
+        setOpenOverlay(true);
+    };
 
-  const handleCloseOverlay = () => {
-    setOpenOverlay(false); // Close the overlay
-  };
+    const handleCloseOverlay = () => {
+        setOpenOverlay(false);
+    };
 
-  return (
-    <motion.div
-      whileHover={{
-        scale: 1.05,
-        boxShadow: "0 8px 20px rgba(0, 0, 0, 0.2)",
-      }}
-    >
-      <Card
-        sx={{
-          maxWidth: 345,
-          minWidth: 345,
-          minHeight: 470,
-          transition: "transform 0.3s",
-          backgroundColor: alpha(theme.palette.background.default, 8),
-          boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
-          "&:hover": {
-            backgroundColor: alpha(theme.palette.background.default, 9),
-          },
-        }}
-      >
-        <CardMedia
-          component="img"
-          height="180"
-          image={project.image}
-          alt={`${project.name} thumbnail`}
-          onClick={handleImageClick} // Handle the click event to open the overlay
-          sx={{ cursor: "pointer" }}
-        />
-        <CardContent>
-          <Typography variant="h5" component="div" gutterBottom color="#D8DBE2">
-            {project.name}
-          </Typography>
-          <Typography variant="body2" color="#ADAFB5">
-            {project.description}
-          </Typography>
-          <Box sx={{ mt: 2, display: "flex", gap: 1, flexWrap: "wrap" }}>
-            {project.techStack.map((tech, index) => (
-              <Chip key={index} label={tech} size="small" color="primary" />
-            ))}
-          </Box>
-          <Button
-            variant="contained"
-            sx={{ mt: 2 }}
-            href={project.link}
-            target="_blank"
-          >
-            View Project
-          </Button>
-        </CardContent>
-      </Card>
+    const firstImage = `1.png`; // Assume first image in each folder is named "1.png"
 
-      {/* Full-Size Image Overlay */}
-      <Dialog open={openOverlay} onClose={handleCloseOverlay} maxWidth="lg" fullWidth disableScrollLock>
-        <DialogContent>
-          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <img
-              src={selectedImage}
-              alt="Full-size project"
-              style={{ width: '100%', height: 'auto' }}
-            />
-          </Box>
-        </DialogContent>
-      </Dialog>
-    </motion.div>
-  );
+    return (
+        <div>
+            <Card
+                sx={{
+                    maxWidth: 345,
+                    minWidth: 345,
+                    minHeight: 470,
+                    transition: "transform 0.3s",
+                    backgroundColor: alpha(theme.palette.background.default, 0.8),
+                    boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+                    "&:hover": {
+                        backgroundColor: alpha(theme.palette.background.default, 0.9),
+                    },
+                }}
+            >
+                <CardMedia
+                    component="img"
+                    height="180"
+                    image={require(`../assets/projects/${project.folder}/${firstImage}`)} // Load first image
+                    alt={`${project.name} thumbnail`}
+                    onClick={handleImageClick} // Open modal
+                    sx={{ cursor: "pointer" }}
+                />
+                <CardContent>
+                    <Typography variant="h5" component="div" gutterBottom color="#D8DBE2">
+                        {project.name}
+                    </Typography>
+                    <Typography variant="body2" color="#ADAFB5">
+                        {project.description}
+                    </Typography>
+                    <Box sx={{ mt: 2, display: "flex", gap: 1, flexWrap: "wrap" }}>
+                        {project.techStack.map((tech, index) => (
+                            <Chip key={index} label={tech} size="small" color="primary" />
+                        ))}
+                    </Box>
+                    <Button
+                        variant="contained"
+                        sx={{ mt: 2 }}
+                        href={project.link}
+                        target="_blank"
+                    >
+                        View Project
+                    </Button>
+                </CardContent>
+            </Card>
+
+            {/* Full-Size Image Overlay */}
+            <Dialog open={openOverlay} onClose={handleCloseOverlay} maxWidth="lg" fullWidth disableScrollLock>
+                <DialogContent>
+                    <Swiper
+                        spaceBetween={30}
+                        slidesPerView={1}
+                        navigation
+                        pagination={{ clickable: true }}
+                    >
+                        {Object.keys(images).map((key) => (
+                            <SwiperSlide key={key}>
+                                <Box sx={{ display: "flex", justifyContent: "center" }}>
+                                    <img
+                                        src={images[key]}
+                                        alt={`Project Image ${key}`}
+                                        style={{ width: "100%", height: "auto" }}
+                                    />
+                                </Box>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </DialogContent>
+            </Dialog>
+        </div>
+    );
 };
 
 export default ProjectCard;
